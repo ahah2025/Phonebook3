@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,8 +12,13 @@
 	
 		<h2>전화번호 수정폼</h2>
 		<p>전화번호를 수정하는 폼 입니다.</p>
-	
-		<form action="http://localhost:8080/phonebook2/pbc"  method="get">
+	 	
+	 	<!--  <form action="/pbook3/pbc"  method="get">  pbook3도 바뀔수있다-->
+		<form action="${pageContext.request.contextPath}/pbc"  method="get">
+		
+		${pageContext.request.contextPath}
+		
+		<form action="${pageContext.request.contextPath}/pbc"  method="get">
 			<label>이름(name)</label>
 			<input type="text" name="name" value="">
 			<br>

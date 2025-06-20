@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%@ page import="com.javaex.vo.PersonVO" %>
-
-<%
-	PersonVO personVO = (PersonVO)request.getAttribute("pVO");
-%>
 
 <!DOCTYPE html>
 <html>
@@ -18,21 +14,22 @@
 		<h2>전화번호 등록폼</h2>
 		<p>전화번호를 등록하는 폼 입니다.</p>
 	
+		${pageContext.request.contextPath}
 		<form action="http://localhost:8080/phonebook2/pbc"  method="get">
 			<label>이름(name)</label>
-			<input type="text" name="name" value="<%=personVO.getName()%>">
+			<input type="text" name="name" value="${requestScope.pVO.name}">
 			<br>
 		
 			<label>핸드폰(hp)</label>
-			<input type="text" name="hp" value="<%=personVO.getHp()%>">
+			<input type="text" name="hp" value="${requestScope.pVO.hp}">
 			<br>
 	
 			<label>회사(company)</label>
-			<input type="text" name="company" value="<%=personVO.getCompany()%>">
+			<input type="text" name="company" value="${requestScope.pVO.company}">
 			<br>
 			
 			<label>액션</label>
-			<input type="text" name="no" value="<%=personVO.getPersonId()%>">
+			<input type="text" name="no" value="${requestScope.pVO.personId}">
 			<input type="text" name="action" value="modify">
 			<br>
 			

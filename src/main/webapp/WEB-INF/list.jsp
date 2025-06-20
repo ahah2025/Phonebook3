@@ -13,22 +13,20 @@
 	<h2>전화번호 리스트</h2>
 	<p>전화번호 리스트입니다.</p>
 
-	<!-- ${requestScope.pList[2].name} -->
-
 	<c:forEach items ="${requestScope.plist}" var="personVO" >
 		<table border="1">
 			<tbody>
 				<tr>
 					<td>이름(name)</td>
-					<td>${personVo.name}</td>
+					<td>${personVO.name}</td>
 				</tr>
 				<tr>
 					<td>핸드폰(hp)</td>
-					<td>${personVo.hp}</td>
+					<td>${personVO.hp}</td>
 				<tr>
 				<tr>
 					<td>회사(company)</td>
-					<td>${personVo.company}</td>
+					<td>${personVO.company}</td>
 				<tr>
 				<tr>
 					<td>
@@ -36,7 +34,7 @@
 							[수정폼으로 이동] 
 						</a>
 					</td>
-					<td><a href="">
+					<td><a href="${pageContext.request.contextPath}/pbc?action=delete&no=11">
 							[삭제]
 						</a>
 					</td>
@@ -46,6 +44,7 @@
 		</table>
 	
 	</c:forEach>
+	<a href="${pageContext.request.contextPath}/pbc?action=wform">등록폼 이동</a>
 	<br>
 	
 
