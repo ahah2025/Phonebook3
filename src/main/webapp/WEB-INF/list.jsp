@@ -13,7 +13,7 @@
 	<h2>전화번호 리스트</h2>
 	<p>전화번호 리스트입니다.</p>
 
-	<c:forEach items ="${requestScope.plist}" var="personVO" >
+	<c:forEach items ="${requestScope.pList}" var="personVO" >
 		<table border="1">
 			<tbody>
 				<tr>
@@ -27,14 +27,15 @@
 				<tr>
 					<td>회사(company)</td>
 					<td>${personVO.company}</td>
+					${personVO.personId}
 				<tr>
 				<tr>
 					<td>
-						<a href="">
+						<a href="${pageContext.request.contextPath}/pbc?action=mform&no=${personVO.personId}">
 							[수정폼으로 이동] 
 						</a>
 					</td>
-					<td><a href="${pageContext.request.contextPath}/pbc?action=delete&no=11">
+					<td><a href="${pageContext.request.contextPath}/pbc?action=delete&no=${personVO.personId}">
 							[삭제]
 						</a>
 					</td>

@@ -15,7 +15,14 @@
 		<p>전화번호를 등록하는 폼 입니다.</p>
 	
 		${pageContext.request.contextPath}
-		<form action="http://localhost:8080/phonebook2/pbc"  method="get">
+		
+		action=modify
+		no=1
+		name=aaa
+		hp=010
+		company=02
+		
+		<form action="${pageContext.request.contextPath}/pbc"  method="get">
 			<label>이름(name)</label>
 			<input type="text" name="name" value="${requestScope.pVO.name}">
 			<br>
